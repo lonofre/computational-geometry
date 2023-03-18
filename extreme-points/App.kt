@@ -19,7 +19,7 @@ fun main() {
 					.map{ it.id }
 					.joinToString("\n")
 	
-	File("result.txt").writeText(result)
+	File("solution.txt").writeText(result)
 
 }
 

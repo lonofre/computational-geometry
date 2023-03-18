@@ -1,3 +1,6 @@
+/**
+  Represents a 2D point.
+ */
 class Point(val id: String, val x: Float, val y: Float){
 	
 	
@@ -25,6 +28,7 @@ class Point(val id: String, val x: Float, val y: Float){
 
 	companion object {
 		
+
 		fun orientation (p: Point, q: Point, r: Point): Direction{
 			val value = (r.y - p.y) * (q.x - p.x) - (q.y - p.y) * (r.x - p.x)
 			if(value == 0f){
@@ -34,6 +38,9 @@ class Point(val id: String, val x: Float, val y: Float){
 			} else return Direction.CLOCKWISE
 		}
 
+		/**
+		 Given a list of points, returns its Convex Hull
+		 */
 		fun extremePoints (points: List<Point>): List<Point>{
 			var convexHull = mutableListOf<Point>()
 			val n = points.size - 1
